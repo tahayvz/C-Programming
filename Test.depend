@@ -1,0 +1,99 @@
+# depslib dependency file v1.0
+1553717285 source:c:\users\tahay\onedrive\belgeler\c programlama udemy\test\test.c
+	<stdbool.h>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<stddef.h>
+
+1553531998 source:c:\users\tahay\onedrive\belgeler\c programlama udemy\test\calisma.c
+	<stdio.h>
+
+1553604086 source:c:\users\tahay\onedrive\belgeler\c programlama udemy\test\oyun.c
+	<stdio.h>
+	<stdlib.h>
+
+1556458514 source:c:\users\tahay\onedrive\belgeler\c programlama\test\test.c
+	<stdbool.h>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<stddef.h>
+	"enums.h"
+	"multiply.h"
+	"TicTacToe.h"
+	"whileLoop.h"
+	"Arrays.h"
+	"randomNumber.h"
+	"VariableSize.h"
+	"strings.h"
+	"ebob.h"
+	"pointers.h"
+
+1556294289 source:c:\users\tahay\onedrive\belgeler\c programlama\test\operatortest.c
+	<stdio.h>
+
+1556436412 c:\users\tahay\onedrive\belgeler\c programlama\test\multiply.h
+
+1556436729 source:c:\users\tahay\onedrive\belgeler\c programlama\test\multiply.c
+	<stdio.h>
+
+1556436257 source:c:\users\tahay\onedrive\belgeler\c programlama\test\enums.c
+	<stdio.h>
+
+1556437039 source:c:\users\tahay\onedrive\belgeler\c programlama\test\variablesize.c
+	<stdio.h>
+	<stdbool.h>
+
+1556358278 source:c:\users\tahay\onedrive\belgeler\c programlama\test\tictactoe.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
+1556358261 c:\users\tahay\onedrive\belgeler\c programlama\test\tictactoe.h
+
+1556381861 source:c:\users\tahay\onedrive\belgeler\c programlama\test\whileloop.c
+
+1556437367 source:c:\users\tahay\onedrive\belgeler\c programlama\test\arrays.c
+	<stdio.h>
+
+1556381814 c:\users\tahay\onedrive\belgeler\c programlama\test\whileloop.h
+
+1556382203 c:\users\tahay\onedrive\belgeler\c programlama\test\arrays.h
+
+1556382762 c:\users\tahay\onedrive\belgeler\c programlama\test\randomnumber.h
+
+1556382884 source:c:\users\tahay\onedrive\belgeler\c programlama\test\randomnumber.c
+	<stdlib.h>
+	<stdio.h>
+
+1556357288 c:\users\tahay\onedrive\belgeler\c programlama\test\enums.h
+
+1556357621 c:\users\tahay\onedrive\belgeler\c programlama\test\variablesize.h
+
+1556455478 source:c:\users\tahay\onedrive\belgeler\c programlama\test\strings.c
+	<stdbool.h>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<stddef.h>
+
+1556457189 source:c:\users\tahay\onedrive\belgeler\c programlama\test\ebob.c
+	<stdio.h>
+	<stdlib.h>
+
+1556457937 source:c:\users\tahay\onedrive\belgeler\c programlama\test\pointers.c
+	<stdio.h>
+	<stdlib.h>
+
+1556455476 c:\users\tahay\onedrive\belgeler\c programlama\test\strings.h
+
+1556457127 c:\users\tahay\onedrive\belgeler\c programlama\test\ebob.h
+
+1556457945 c:\users\tahay\onedrive\belgeler\c programlama\test\pointers.h
+
+1556458238 c:\users\tahay\onedrive\belgeler\c programlama\test\arguments.h
+
+1556458344 source:c:\users\tahay\onedrive\belgeler\c programlama\test\arguments.c
+	<stdio.h>
+
