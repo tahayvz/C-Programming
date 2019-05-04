@@ -6,42 +6,30 @@
 #define PAYRATE 12.00 //constant used for character and string
 #include <string.h>
 #include <stddef.h>
-
-#include "enums.h" //h ve c hosyalarını yazdıktan sonra project sekmesinde add files ile eklemeliyiz
-#include "multiply.h"
-#include "TicTacToe.h"
-#include "whileLoop.h"
-#include "Arrays.h"
-#include "randomNumber.h"
-#include "VariableSize.h"
-#include "strings.h"
-#include "ebob.h"
-#include "pointers.h"
-
-
+#include "includes.h"
+#define SECONDS_IN_YEAR (60UL * 60UL * 24UL * 365UL)
+ #define cat(x,y) x##y
+ #define xcat(x,y) cat(x,y)
 //int myGlobal=0; //global value
 
 int main(int argc, char *argv[]){
 
-//        int localValueMain=0; //local value
-//        printf("PAYRATE %f\n", PAYRATE);
-
-//if condition
-/*        int yy=1;
-        int xx = (yy<7?25:50);
-        printf("\nxx %d\n",xx);
-*/
 //         enums();
 //         multiply(3);
-//         VariableSize();
+   //    VariableSize();
 //         whileLoop(); //while loop and goto
 //         Arrays(); //quotes in quotes
 //         game(); //tictactoe game
 //         randomNumber();
 //         strings();
 //         ebob();
-        pointers();
-
+         pointers();
+//         swap(4,5);
+//         evenOdd(7);
+//         linkedListExamples();
+//         circularLinkedList();
+//         stackExample();
+//         stackWithLinkedList();
 /*    int numberOfArguments=argc; //programın project sekmesinde set program argumentted yazıldı
     char *argument1= argv[0];
     char *argument2= argv[1];
@@ -63,6 +51,46 @@ int main(int argc, char *argv[]){
     printf("width %f height %f long %f", width,height,area);
 */
 
+//        int localValueMain=0; //local value
+//        printf("PAYRATE %f\n", PAYRATE);
+
+//if condition
+/*        int yy=1;
+        int xx = (yy<7?25:50);
+        printf("\nxx %d\n",xx);
+*/
+
+    int x3=SECONDS_IN_YEAR;
+    printf("1 yilda kac saniye var: %d",x3);
+    int x=cat(1,3);
+    printf("%d\n",x);
+    int x2=xcat(xcat(1,2),3);
+    printf("%d\n",x2);
+
+    /* //sonsuz looplar
+    while(1)
+        { }
+
+        for(;;)
+        { }
+
+        Loop:
+        goto Loop
+    */
+
+    /* her degisken turunu alabilen fonksiyon
+    typedef struct
+        {
+        node *next;
+        void *data;
+        }node;
+
+    */
+
+    /*
+    int i = 2, j = 3, res;
+    res = i+++j; //(i++) + j döner 5 tir sonra i 3 olur
+     */
       return 0;
 }
 

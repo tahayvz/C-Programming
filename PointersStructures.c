@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>//malloc,calloc bu headerda
+#include <string.h>
 
 int arraySum(int array[], const int n){
     int sum=0,*ptr;
@@ -32,7 +33,7 @@ int stringLength(const char *string){
     ++lastAddress;
     return lastAddress-string;
 }
-/*
+
             struct namect{
             char *fname;
             char *iname;
@@ -55,7 +56,7 @@ void getinfo(struct namect *pst){
 void printInfo(struct namect *pprint){
     printf("\nName: %s surname: %s",pprint->iname,pprint->fname);
 
-} */
+}
 
 
 
@@ -103,14 +104,11 @@ int pointers()
            int *intpointer;
            intpointer=&count;
            x=*intpointer;
-           printf("count=%i,x=%i \nintpointer address sembollu %p \nintpointer address void'li %p \nintpointer size %d\nintpointer value %p\nintpointer",count,x,&intpointer,
-                  (void*)intpointer, (int)sizeof(intpointer),intpointer,*intpointer);
-           printf("count adress %p \ncount value %d\n",&count,count);
-           intpointer=&count;
-           printf("intpointer value %p\nyani count adres, value pointed to %d\n",
-                  (intpointer,*intpointer);
-
-                     long num1=1L;
+           printf("count=%i \nx=%i \n&intpointer: %p \n(void*)intpointer: %p pointerin adresini gösterir. \n(int)sizeof(intpointer): %d\nintpointer: %p \n*intpointer: %d",
+                  count,x,&intpointer,(void*)intpointer, (int)sizeof(intpointer),intpointer,*intpointer);
+           printf("\n&count: %p \ncount: %d\n",&count,count);
+            //pointera değer atamak için *p, adres atamak için p yazılır.
+            long num1=1L;
             long num2=2L;
             long *pnum=NULL;
             pnum=&num1;
@@ -125,36 +123,44 @@ int pointers()
             --pnum;
             printf("num1=%ld num2=%ld *pnum=%ld *pnum+num2=%ld\n",num1,num2,*pnum,*pnum+num2);
             printf("input integer\n");
-          /*  scanf("%ld",pnum);//input pointer
+            scanf("%ld",pnum);//input pointer
             printf("entered %ld, %p\n",num2,*pnum);
-            */
 
-             long num5=5L;
+
+            long num5=5L;
             const long *plong=&num5; //pointer degeri constant olur
-            printf("%ld\n",*plong);
+            printf("*plong %ld\n",*plong);
             num5=4L;
-            printf("%ld\n",*plong);
+            printf("*plong %ld\n",*plong);
             plong=&num2;
-            printf("%ld\n",*plong);
-            long *const pointlong=&num2;//constant pointer
-            // pointlong=&num5; //pointer constant oldugundan degistirilemez
-            printf("%ld\n", pointlong);
-            *pointlong=3L;
-            printf("%ld\n", pointlong);//pointer degeri degismedi
+            printf("*plong %ld\n",*plong);
+            long *const constantPointLong=&num2;//constant pointer: adresi değişmez aynı değişkende kalır değerleri degistirilebilir
+            // constantPointLong=&num5; //pointer constant oldugundan degistirilemez
+            printf("constantPointLong: %ld\n", constantPointLong);
+            printf("*plong: %ld\n",*plong);
+            *constantPointLong=3L;
+            printf("constantPointLong: %ld\n", constantPointLong);//pointer degeri degismedi
+            printf("constantPointLong: %p\n", *constantPointLong);
+            printf("*plong: %ld\n",*plong);
+            printf("num2: %ld\n",num2);
             num2=99L;
-            printf("%ld\n", pointlong);//pointer degeri degismedi
+            printf("constantPointLong: %ld\n", constantPointLong);
+            printf("*constantPointLong: %d\n", *constantPointLong);
+
+            printf("*plong: %ld\n",*plong);
             const long *const pitem=&num2;
-           // pitem=&num5;//izin verilmedi cünkü num2 adresi constant
-            printf("%ld\n" , *pitem);
+           // pitem=&num5;//izin verilmedi cünkü num2 adresi constant olmustu
+            printf("*pitem: %ld\n" , *pitem);
 
             char *pGot_char=NULL;
             char str3[]="";
             char str1[]="to be or not to be";
-           char str2[]="that is not question";
-                       char chr='t';
-
-            pGot_char=strchr(str3,chr);//strchr() ilk bulduðu chr charýndan sonrasýný kopyalar
+            char str2[]="that is not question";
+            char chr='a';
+            pGot_char=str2;
             printf("%s\n",pGot_char);
+            pGot_char=strchr(str2,chr);//strchr() ilk bulduðu chr charindan sonrasini kopyalar öncesini kopyalamaz
+            printf("%s\n",pGot_char); //calismadi???
 
             char *ret;
             const char haystack[20] = "TutorialsPoint";
@@ -165,7 +171,7 @@ int pointers()
             ret=strtok(str1,s);//kesme
             printf("%s\n",ret);
 
-     char multiple[]="a string";
+            char multiple[]="a string";
             char *p=multiple;
             for(int i=0;i<strlen(multiple);++i){
                 printf("multiple[%d]=%c *(p+%d)=%c &multiple[%d]=%p p+%d=%p\n",
@@ -173,22 +179,22 @@ int pointers()
             }
             *(p)=multiple;
             *(p+2)='x';//multiple[2] nin s degeri x oldu
-             printf("%c\n",*(p+2));
-             int value[2];
-             *(p)=value;
-             *(p)=34;  *(p+1)=77;
-             printf("%d %d ",*(p),*(p+1));//pointer ile arraye erisim
-             printf("%d, %d\n", ++*(p),--*(p+1));//pointer ile deðeri bututme kucultme
-            int arraySum(int array[], const int n);
+            printf("%c\n",*(p+2));
+            int value[2];
+            *(p)=value;
+            *(p)=34;  *(p+1)=77;
+            printf("%d %d \n",*(p),*(p+1));//pointer ile arraye erisim
+            printf("%d, %d\n", ++*(p),--*(p+1));//pointer ile deðeri bututme kucultme
+           // int arraySum(int array[], const int n);
             int values[10]={3,5,4,-4,-6,3,7,4,6,7};
             printf("the sum is %i\n",arraySum(values,10));
-            int arraySum2(int *pSum, const int n);
+         //   int arraySum2(int *pSum, const int n);
             printf("the sum2 is %i\n",arraySum2(values,10));
             int *ptr1=values;
-           int *ptr2=ptr1+3;//values[3]
-           printf("%i\n",*ptr2);
-           ptr2=values+1;//values[1]
-            printf("%i\n",*ptr2);
+            int *ptr2=ptr1+3;//values[3]
+            printf("*ptr2: %i\n",*ptr2);
+            ptr2=values+1;//values[1]
+            printf("*ptr2: %i\n",*ptr2);
             //values++ olmaz, ptr2=ptr2+ptr1 olmaz, ptr2=ptr1+values olmaz
             int sayi1=4;
             int sayi2=5;
@@ -197,19 +203,18 @@ int pointers()
             printf("sayi1 %d, sayi2 %d\n",sayi1, sayi2);
 
             int *pnumber=(int *)malloc(100);//allocate memory,100byte memory ayırdı.yani 4 byte'lık 25 int
-           // int *pnumber=(int *)malloc(25*sizeof(int)); aynı
-           //pointer bir adresi göstermiorsa malloc pointer'ı NULL yapar
-           if(pnumber!=NULL)//if(!pnumber)
-            printf("pointer is not null\n");
-           free(pnumber);//formal void parametredir
-           pnumber=NULL;
+            // int *pnumber=(int *)malloc(25*sizeof(int)); aynı
+            //pointer bir adresi göstermiorsa malloc pointer'ı NULL yapar
+            if(pnumber!=NULL)//if(!pnumber)
+                 printf("pointer is not null\n");
+            free(pnumber);//formal void parametredir
+            pnumber=NULL;
             if(pnumber==NULL)
-            printf("pointer is null\n");
+                 printf("pointer is null\n");
 
             int *pnumber2=(int *)calloc(75,sizeof(int));//malloc'dan fazlası calloc initialize the allocated memory
             //realloc önceden kullanılmıs malloc ve calloc'ların boyutunu buyutmek ve yeniden kullanabilmek icin kullanilir
-            char *str;
-            str=(char *)malloc(15);
+            char *str=(char *)malloc(15);
             strcpy(str,"jason");
             printf("string %s adress %u\n",str,str);
             str=(char *)realloc(str,25);
@@ -228,11 +233,11 @@ int pointers()
             printf("value of the pnumber3 %p\n", pnumber3);//aaa nın adresini gosterdi
             printf("value of the what pnumber3 is point %d\n", *pnumber3);
 
-/*const int *ptr or int const *ptr:
-ptr is not constant but the value pointed by it is constant. ++ptr is allowed but ++*ptr is not allowed.
-int * const ptr:
-ptr is constant but the value pointed by it is not constant. ++ptr is not allowed but ++*ptr is allowed.
-            */
+            /*const int *ptr or int const *ptr:
+            ptr is not constant but the value pointed by it is constant. ++ptr is allowed but ++*ptr is not allowed. Pointed value constant but pointed address not constant
+            int * const ptr:
+            ptr is constant but the value pointed by it is not constant. ++ptr is not allowed but ++*ptr is allowed. Pointed value not constant but pointed address constant
+                        */
             int *num3=(int *)malloc(sizeof(int));
             *num3=6;
             Square(num3);
@@ -241,7 +246,8 @@ ptr is constant but the value pointed by it is not constant. ++ptr is not allowe
             printf("%d \n",stringLength("string"));
             printf("%d \n",stringLength(""));
             printf("%d \n",stringLength("taha"));
-/*//gets metodu
+
+            //gets metodu
             int size;
             char *text=NULL;
             printf("enter limit of the text \n");
@@ -255,7 +261,7 @@ ptr is constant but the value pointed by it is not constant. ++ptr is not allowe
             }
             free(text);
             text=NULL;
-*/
+
             struct date
             {
                 int day;
@@ -287,6 +293,7 @@ ptr is constant but the value pointed by it is not constant. ++ptr is not allowe
             }now;
             now=(struct time){13,13,44};
             printf("now  time is %i.%i.%i\n",now.hour,now.minute,now.second);
+            printf("sizeof struct time now: %d\n",sizeof(now));
 
 
             struct time time1={13,1}; //second belli degil
@@ -311,7 +318,7 @@ ptr is constant but the value pointed by it is not constant. ++ptr is not allowe
             printf("time thatTime[2] 1. is %i.%i.%i\ntime thatTime[2] 2. is %i.%i.%i\n",thatTime[0].hour,thatTime[0].minute,thatTime[0].second,
                    thatTime[1].hour,thatTime[1].minute,thatTime[1].second);
             struct time yourTime[1]={[0]=4,19,51};
-            printf("time yourTime[2] is %i.%i.%i\n",yourTime[0].hour,yourTime[0].minute,yourTime[0].second);
+            printf("time yourTime[1] is %i.%i.%i\n",yourTime[0].hour,yourTime[0].minute,yourTime[0].second);
 
             struct month{
             int numberOfDays;
@@ -327,7 +334,7 @@ ptr is constant but the value pointed by it is not constant. ++ptr is not allowe
             struct month anotherMonth={31,{'M','A','R'}};
             printf("anotherMonth numberofdays %i anotherMonth name %c%%c%c\n\n",thisMonth.numberOfDays,thisMonth.name[0],thisMonth.name[1],thisMonth.name[2]);
 
-            struct month months[12];
+            struct month months[3];
             months[1].name[0]='F';
             months[1].name[1]='E';
             months[1].name[2]='B';
@@ -408,7 +415,7 @@ ptr is constant but the value pointed by it is not constant. ++ptr is not allowe
             printf("%s and %s\n", veep.last, treas.last);
 
 
-/*            struct family{
+            struct family{
             char name[20];
             int age;
             char father[20];
@@ -435,7 +442,7 @@ ptr is constant but the value pointed by it is not constant. ++ptr is not allowe
             printf("\n Name:  %s"    ,emp.name);
             printf("\n hire date:  %s"    ,emp.date);
             printf("\n salary:  %.2f\n" ,emp.salary);
-*/
+
 
             struct item itm;
             struct item *pItem;
@@ -451,11 +458,30 @@ ptr is constant but the value pointed by it is not constant. ++ptr is not allowe
             struct funds stan={"Turkiye finans",11.22,"Taha's savings and loan\n",11.33};
             printf("Taha has a total of $%.2f\n",sum(stan));
 
-    /*      int letters;
+            int letters;
             getinfo(&letters);
             printInfo(&letters);
-*/
-            return 0;
+
+            typedef enum{
+                male,
+                female
+            } gender;
+            typedef struct{
+                int age;
+                char *name;
+                gender sex;
+            }human;
+            human jack;
+            jack.age = 25;
+            jack.sex = male;
+            printf("Age of Jack : %d \nGender of Jack : %u\n", jack.age,jack.sex);
+            human *john;
+            john = (human*)malloc(sizeof(human));
+            john -> age = 30;
+            john -> sex = male;
+            printf("Age of John : %d \nGender of John : %u\n", john->age,john->sex);
+
+                    return 0;
 }
 
 

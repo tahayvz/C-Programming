@@ -38,26 +38,59 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Arrays.h" />
+		<Unit filename="LinkedLists.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="LinkedLists.h" />
+		<Unit filename="Main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="PointersStructures.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="TicTacToe.h" />
 		<Unit filename="VariableSize.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="VariableSize.h" />
+		<Unit filename="circularLinkedList.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="circularLinkedList.h" />
+		<Unit filename="ebob.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ebob.h" />
 		<Unit filename="enums.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="enums.h" />
+		<Unit filename="evenOdd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="evenOdd.h" />
+		<Unit filename="includes.h" />
 		<Unit filename="multiply.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="multiply.h" />
+		<Unit filename="pointers.h" />
 		<Unit filename="randomNumber.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="randomNumber.h" />
-		<Unit filename="test.c">
+		<Unit filename="stackWithLinkedList.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="stackWithLinkedList.h" />
+		<Unit filename="stackWithpointer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="stackWithpointer.h" />
+		<Unit filename="swap.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="swap.h" />
 		<Unit filename="tictactoe.c">
 			<Option compilerVar="CC" />
 		</Unit>
