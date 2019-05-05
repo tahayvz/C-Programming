@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>//malloc,calloc bu headerda
+#include <stdlib.h>//malloc,calloc header
 #include <string.h>
 
 int arraySum(int array[], const int n){
