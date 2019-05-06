@@ -23,7 +23,7 @@ int main(int argc, char *argv[]){
 //         randomNumber();
 //         strings();
 //         ebob();
-//         pointers();
+        pointers();
 //         swap(4,5);
 //         evenOdd(7);
 //         linkedListExamples();

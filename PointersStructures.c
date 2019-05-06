@@ -41,7 +41,7 @@ int stringLength(const char *string){
 void getinfo(struct namect *pst){
             char temp[10];
             printf("please enter your first name\n");
-            scanf(" ");//gets_s() metodu kullanmadım
+            scanf(" ");
             gets(temp);
             //allocate memory to hold name
             pst->fname=(char *)malloc(strlen(temp)+1);
@@ -401,18 +401,20 @@ int pointers()
             printf("i1=%i,*pointers.p1=%i\n",i1,*pointers.p1);
             printf("i2=%i,*pointers.p2=%i\n",i2,*pointers.p2);
 
-            struct names{//40bytelık yer ayirmis
-            char first[20];
+            struct names{
+            char first[20]; //20 byte
             char last[20];
             };
-            struct pnames{//en fazla 16 byte tutar
-            char *first;
+            struct pnames{
+            char *first; //8byte
             char *last;
             };
             struct names veep={"taha","yavuz"};
             struct pnames treas={"bunyamin","yavuz"};
             printf("%s and %s\n", veep.first, treas.first);
             printf("%s and %s\n", veep.last, treas.last);
+            printf("size of struct %d\n",sizeof(struct names));
+            printf("size of struct %d\n",sizeof(struct pnames));
 
 
             struct family{

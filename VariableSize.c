@@ -33,7 +33,7 @@ void VariableSize(){
     unsigned int month:4;//12 month so max 4 bit
     unsigned int day:5; // 31 day so max 5 bit
     };
-       printf("Size of date is %d bytes yani 4 byte azaldý\n", sizeof(struct date));
+       printf("Size of date is %d bytes meanly 4 byte decreased\n", sizeof(struct date));
     struct date dt = {2014, 12, 20};
    printf("Date is %d/%d/%d\n", dt.day, dt.month, dt.year);
 
