@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int gcd(int u, int v);
-float absoluteValue(float x);
-float squareRoot(float x);
-//metodlar main altýnda tanýmlanýrsa yukarda ilk tanýmlama yapýlýr. prototype
+int gcd(int u, int v);//prototype
+float absoluteValue(float x);//prototype
+float squareRoot(float x);//prototype
+// when method declared under main we need prototype
 int ebob()
 {
     int result = 0;

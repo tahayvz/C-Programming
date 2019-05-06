@@ -1,8 +1,6 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "LinkedLists.h"
-
 #define MULTIPLIER 10
 
 node * fillLinkedList(node *root,int sizeOfLinkedList,int multiplier){

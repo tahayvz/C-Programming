@@ -30,8 +30,8 @@ void VariableSize(){
     //bit fields
     struct date{
     unsigned int year;
-    unsigned int month:4;//en fazla 12 ay var yani max 4 bit
-    unsigned int day:5; //en fazla 31 gün yani max 5 bit var
+    unsigned int month:4;//12 month so max 4 bit
+    unsigned int day:5; // 31 day so max 5 bit
     };
        printf("Size of date is %d bytes yani 4 byte azaldý\n", sizeof(struct date));
     struct date dt = {2014, 12, 20};

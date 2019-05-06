@@ -157,7 +157,7 @@ void markBoard(char mark)
         printf("Invalid move ");
 
         player--;
-        getch();//player deðiþince ekranda hata mesajýný göstermesini BEKLER ve tuþa basmadan ekran geçmez
+        getch();//when change player wait for error message and don't pass screen without push any key
     }
 }
 

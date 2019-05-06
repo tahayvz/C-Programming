@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>//malloc,calloc bu headerda
+#include <stdlib.h>//malloc,calloc in this header
 #include <string.h>
 
 int arraySum(int array[], const int n){
@@ -107,12 +107,12 @@ int pointers()
            printf("count=%i \nx=%i \n&intpointer: %p \n(void*)intpointer: %p pointerin adresini gösterir. \n(int)sizeof(intpointer): %d\nintpointer: %p \n*intpointer: %d",
                   count,x,&intpointer,(void*)intpointer, (int)sizeof(intpointer),intpointer,*intpointer);
            printf("\n&count: %p \ncount: %d\n",&count,count);
-            //pointera değer atamak için *p, adres atamak için p yazılır.
+            //*p: for assign value to pointer. p:for assging address to pointer
             long num1=1L;
             long num2=2L;
             long *pnum=NULL;
             pnum=&num1;
-            *pnum=2L;//num1 degeri degisir
+            *pnum=2L;//num1 changed
             ++num2;
             num2+=*pnum;
             pnum=&num2;
@@ -128,18 +128,18 @@ int pointers()
 
 
             long num5=5L;
-            const long *plong=&num5; //pointer degeri constant olur
+            const long *plong=&num5; //constant value of pointer
             printf("*plong %ld\n",*plong);
             num5=4L;
             printf("*plong %ld\n",*plong);
             plong=&num2;
             printf("*plong %ld\n",*plong);
-            long *const constantPointLong=&num2;//constant pointer: adresi değişmez aynı değişkende kalır değerleri degistirilebilir
-            // constantPointLong=&num5; //pointer constant oldugundan degistirilemez
+            long *const constantPointLong=&num2;//constant pointer: same address but can change pointed value
+            // constantPointLong=&num5; //constant pointer so so can not change
             printf("constantPointLong: %ld\n", constantPointLong);
             printf("*plong: %ld\n",*plong);
             *constantPointLong=3L;
-            printf("constantPointLong: %ld\n", constantPointLong);//pointer degeri degismedi
+            printf("constantPointLong: %ld\n", constantPointLong);//same pointer value
             printf("constantPointLong: %p\n", *constantPointLong);
             printf("*plong: %ld\n",*plong);
             printf("num2: %ld\n",num2);
@@ -149,7 +149,7 @@ int pointers()
 
             printf("*plong: %ld\n",*plong);
             const long *const pitem=&num2;
-           // pitem=&num5;//izin verilmedi cünkü num2 adresi constant olmustu
+           // pitem=&num2;//not allowed because the num2 address was constant
             printf("*pitem: %ld\n" , *pitem);
 
             char *pGot_char=NULL;
@@ -159,7 +159,7 @@ int pointers()
             char chr='a';
             pGot_char=str2;
             printf("%s\n",pGot_char);
-            pGot_char=strchr(str2,chr);//strchr() ilk bulduðu chr charindan sonrasini kopyalar öncesini kopyalamaz
+            pGot_char=strchr(str2,chr);//strchr() method copy from first 'chr' to end tos tr2
             printf("%s\n",pGot_char); //calismadi???
 
             char *ret;
@@ -167,8 +167,8 @@ int pointers()
             const char needle[10] = "Point";
             ret = strstr(haystack, needle);
             printf("The substring is: %s\n", ret);
-            char s[2]="-";
-            ret=strtok(str1,s);//kesme
+            char s[2]="b";
+            ret=strtok(str1,s);//cutting from first char of str1 to s char
             printf("%s\n",ret);
 
             char multiple[]="a string";
@@ -178,13 +178,13 @@ int pointers()
                        i,multiple[i],i,*(p+i),i,&multiple[i],i,p+i);
             }
             *(p)=multiple;
-            *(p+2)='x';//multiple[2] nin s degeri x oldu
+            *(p+2)='x';//multiple[2] s change to x
             printf("%c\n",*(p+2));
             int value[2];
             *(p)=value;
             *(p)=34;  *(p+1)=77;
-            printf("%d %d \n",*(p),*(p+1));//pointer ile arraye erisim
-            printf("%d, %d\n", ++*(p),--*(p+1));//pointer ile deðeri bututme kucultme
+            printf("%d %d \n",*(p),*(p+1));//access array by pointer
+            printf("%d, %d\n", ++*(p),--*(p+1));//increase or decrease by pointer
            // int arraySum(int array[], const int n);
             int values[10]={3,5,4,-4,-6,3,7,4,6,7};
             printf("the sum is %i\n",arraySum(values,10));
@@ -195,32 +195,32 @@ int pointers()
             printf("*ptr2: %i\n",*ptr2);
             ptr2=values+1;//values[1]
             printf("*ptr2: %i\n",*ptr2);
-            //values++ olmaz, ptr2=ptr2+ptr1 olmaz, ptr2=ptr1+values olmaz
+            //values++ not work, ptr2=ptr2+ptr1 not work, ptr2=ptr1+values not work
             int sayi1=4;
             int sayi2=5;
             printf("swapten once sayi1 %d, sayi2 %d\n",sayi1,sayi2);
             Swap(&sayi1,&sayi2);
             printf("sayi1 %d, sayi2 %d\n",sayi1, sayi2);
 
-            int *pnumber=(int *)malloc(100);//allocate memory,100byte memory ayırdı.yani 4 byte'lık 25 int
-            // int *pnumber=(int *)malloc(25*sizeof(int)); aynı
-            //pointer bir adresi göstermiorsa malloc pointer'ı NULL yapar
+            int *pnumber=(int *)malloc(100);//allocate 100 byte memory, meanly 4 byte*25 int
+            // int *pnumber=(int *)malloc(25*sizeof(int));  //same
+            //if pointer not point any address malloc do it NULL
             if(pnumber!=NULL)//if(!pnumber)
                  printf("pointer is not null\n");
-            free(pnumber);//formal void parametredir
+            free(pnumber);//formal void parameter
             pnumber=NULL;
             if(pnumber==NULL)
                  printf("pointer is null\n");
 
-            int *pnumber2=(int *)calloc(75,sizeof(int));//malloc'dan fazlası calloc initialize the allocated memory
-            //realloc önceden kullanılmıs malloc ve calloc'ların boyutunu buyutmek ve yeniden kullanabilmek icin kullanilir
+            int *pnumber2=(int *)calloc(75,sizeof(int));// calloc initialize the allocated memory
+            //realloc is used to increase the size and reuse of pre-used malloc and calloc
             char *str=(char *)malloc(15);
             strcpy(str,"jason");
             printf("string %s adress %u\n",str,str);
             str=(char *)realloc(str,25);
             strcat(str,".com");
             printf("string %s adress %u\n",str,str);
-            str=(int *)realloc(str,5);//chardan inte casting yaptım
+            str=(int *)realloc(str,5);//casting from char to int
             int aaa=3;
             str=&aaa;
             printf("int %d adress %u\n",*str,str);
@@ -230,7 +230,7 @@ int pointers()
             pnumber3=&aaa;
             printf("aaa adress is %p\n",&aaa);
             printf("pnumber3 adress is %p\n",&pnumber3);
-            printf("value of the pnumber3 %p\n", pnumber3);//aaa nın adresini gosterdi
+            printf("value of the pnumber3 %p\n", pnumber3);//&aaa
             printf("value of the what pnumber3 is point %d\n", *pnumber3);
 
             /*const int *ptr or int const *ptr:
@@ -247,7 +247,7 @@ int pointers()
             printf("%d \n",stringLength(""));
             printf("%d \n",stringLength("taha"));
 
-            //gets metodu
+            //gets method
             int size;
             char *text=NULL;
             printf("enter limit of the text \n");
@@ -256,7 +256,7 @@ int pointers()
             if(text!=NULL){
                 printf("enter some text \n");
                 scanf(" ");
-                gets(text);//scanf icin girilen degeri okur
+                gets(text);//read scanf value
                 printf("inputted text is %s\n",text);
             }
             free(text);
@@ -474,6 +474,7 @@ int pointers()
             human jack;
             jack.age = 25;
             jack.sex = male;
+
             printf("Age of Jack : %d \nGender of Jack : %u\n", jack.age,jack.sex);
             human *john;
             john = (human*)malloc(sizeof(human));

@@ -1,8 +1,8 @@
 #include <stdbool.h>//boolean header
-#include <stdlib.h>//random sayıda kullandım. conversion, memory, process control, sort and search, mathematics'lerde kullanılır
-#include <stdio.h> // birden fazla standart sistem dizinlere bakacak
-/*#include "stdio.h" ilk önce simdiki dizine bakacak ve include dosyası içinde olmak zorunda degil
-#ifndef ve #define headerin birden fazla içerigine karsi korunmak için*/
+#include <stdlib.h>//random. conversion, memory, process control, sort and search, mathematics
+#include <stdio.h> // look more than one standard system directory
+/*#include "stdio.h" first look current directory and have not to be in include file
+#ifndef and #define header used for protect class for more define. just one time defined*/
 #define PAYRATE 12.00 //constant used for character and string
 #include <string.h>
 #include <stddef.h>
@@ -16,21 +16,21 @@ int main(int argc, char *argv[]){
 
 //         enums();
 //         multiply(3);
-   //    VariableSize();
+//         VariableSize();
 //         whileLoop(); //while loop and goto
 //         Arrays(); //quotes in quotes
 //         game(); //tictactoe game
 //         randomNumber();
 //         strings();
 //         ebob();
-         pointers();
+//         pointers();
 //         swap(4,5);
 //         evenOdd(7);
 //         linkedListExamples();
 //         circularLinkedList();
 //         stackExample();
 //         stackWithLinkedList();
-/*    int numberOfArguments=argc; //programın project sekmesinde set program argumentted yazıldı
+/*    int numberOfArguments=argc; // in project tab writed set program argument
     char *argument1= argv[0];
     char *argument2= argv[1];
     char *argument3= argv[2];
@@ -67,7 +67,7 @@ int main(int argc, char *argv[]){
     int x2=xcat(xcat(1,2),3);
     printf("%d\n",x2);
 
-    /* //sonsuz looplar
+    /* //infinite loops
     while(1)
         { }
 
@@ -78,7 +78,7 @@ int main(int argc, char *argv[]){
         goto Loop
     */
 
-    /* her degisken turunu alabilen fonksiyon
+    /* function for all type value
     typedef struct
         {
         node *next;
@@ -89,7 +89,7 @@ int main(int argc, char *argv[]){
 
     /*
     int i = 2, j = 3, res;
-    res = i+++j; //(i++) + j döner 5 tir sonra i 3 olur
+    res = i+++j; //(i++) + j  2+3 then i=3
      */
       return 0;
 }

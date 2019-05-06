@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 void Arrays(){
  int counts[3]={0,2};
